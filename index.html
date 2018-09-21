@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>NYT Search</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
+        crossorigin="anonymous">
+    <style>
+        #header {
+            background: url(https://www.50-best.com/images/twitter_headers/city_cover.jpg);
+            background-image: fixed;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+            background-position-y: 40%;
+            color: #ebe987
+        }
+
+        body {
+            background-image: linear-gradient(to bottom, #968966, #7f6253, #5a4244, #32272e, #0e0d11);
+        }
+
+        .card {
+            background: #b38d7b
+        }
+    </style>
+</head>
+
+<body>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+    <div class="container">
+        <div class="jumbotron text-center text-black" id="header">
+            <div class="container">
+                <h1 class="display-5"><i class="far fa-newspaper"></i> New York Times Search</h1>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="card">
+            <div class="card-header text-left">
+                <strong></i><i class="fas fa-laptop"></i> Search Parameters</strong>
+            </div>
+            <div class="card-body">
+                <form>
+                    <div class="form-group">
+                        <label for="searchTerm">Search Term:</label>
+                        <input type="search" class="form-control" id="searchForm" aria-describedby="searchHelp" placeholder="">
+                    </div>
+                    <div class="form-group">
+                        <label for="recordsRetrieved">Number of Records to Retrieve</label>
+                        <select class="form-control" id="recordsRetrieved">
+                            <option value="1" id="oneRecords">1</option>
+                            <option value="5" id="fiveRecords">5</option>
+                            <option value="10" id="tenRecords">10</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="startYear">Start Year (Optional):</label>
+                        <input type="searchYear" class="form-control" id="searchStartYear" aria-describedby="searchYearHelp" placeholder="">
+                    </div>
+                    <div class="form-group">
+                        <label for="startYear">Ending Year (Optional):</label>
+                        <input type="searchEndYear" class="form-control" id="searchEndYear" aria-describedby="searchEndYearHelp" placeholder="">
+                    </div>
+                    <button type="submit" class="btn btn-outline-transparent bg-transparent text-dark" id="searchButton"><i
+                            class="fas fa-search"></i>
+                        Search</button>
+                    <button type="submit" class="btn btn-outline-transparent bg-transparent text-dark" id="clearButton"><i
+                            class="fas fa-trash-alt"></i> Clear Results
+                    </button>
+                    <button type="submit" class="btn btn-outline-transparent bg-transparent text-dark" id="clearButton"><i
+                            class="fas fa-trash-alt"></i> Clear Search
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="card mt-4">
+            <div class="card-header">
+                <strong><i class="fas fa-newspaper"></i> Top Articles</strong>
+            </div>
+            <div class="card-body">
+                <div id="articleDump">
+
+                </div>
+            </div>
+        </div>
+        <script src="javascript.js"></script>
+</body>
+
+</html>
